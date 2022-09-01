@@ -21,6 +21,7 @@ rm -rf /var/lib/apt/lists/*
 s3fs hw15 /tmp/mount -o passwd_file=/root/.passwd-s3fs -o url=http://storage.yandexcloud.net -o use_path_request_style
 [ -d "${tomcat_dir}" ] || mkdir ${tomcat_dir} 2> /dev/null
 tar xpvf "${tomcat_src}" -C "${tomcat_dir}" --strip-components=1 > /dev/null 2>&1
+cp ${mnt_folder}/*.*ar ${tomcat_dir}/webapps/
 export CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 export CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
 ${tomcat_dir}/bin/startup.sh
