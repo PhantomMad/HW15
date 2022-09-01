@@ -23,3 +23,4 @@ variable "git_url" {
   type        = string
   default     = "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"
 }
+#https://github.com/Coveros/helloworld.git
