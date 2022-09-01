@@ -6,7 +6,7 @@ maven_src="/tmp/${maven_arch}"
 maven_dir="/opt/maven"
 [ "${ami}" == "root" ] || exit 1
 apt-get update
-apt-get install -y default-jdk git tar
+apt-get install -y default-jdk git tar s3fs
 rm -rf /var/lib/apt/lists/*
 [ -e "${maven_src}" ] || (echo "Maven srcfolder ${maven_src}  is absent!" && exit 1)
 ([ -d "${maven_dir}" ] || mkdir ${maven_dir} 2> /dev/null) || (echo "Maven workfolder ${maven_src}  is absent!" && exit 1)
