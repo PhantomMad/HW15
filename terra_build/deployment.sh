@@ -19,6 +19,7 @@ rm -rf /var/lib/apt/lists/*
 ([ -d "${maven_dir}" ] || mkdir ${maven_dir} 2> /dev/null) || (echo "Maven workfolder ${maven_src}  is absent!" && exit 1)
 ([ -d "${mnt_folder}" ] || mkdir ${mnt_folder} 2> /dev/null) || (echo "Mount workfolder ${mnt_folder}  is absent!" && exit 1)
 s3fs hw15 /tmp/mount -o passwd_file=/root/.passwd-s3fs -o url=http://storage.yandexcloud.net -o use_path_request_style
+[ -d "${maven_dir}" ] || mkdir ${maven_dir} 2> /dev/null
 tar xpvf "${maven_src}" -C "${maven_dir}" --strip-components=1 > /dev/null 2>&1
 export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
