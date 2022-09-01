@@ -30,7 +30,7 @@ resource "yandex_compute_instance" "vm_build" {
     destination = "/tmp/deployment.sh"
   }
   provisioner "remote-exec" {
-    inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/deployment.sh ${var.git_url}", ]
+    inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/deployment.sh ${var.git_url} ${var.maven_gz}", ]
   }
   connection {
     type        = "ssh"
