@@ -18,7 +18,7 @@ export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
 ln -s ${maven_dir}/bin/mvn /bin/mvn
 git clone "${git_url}" "${git_dir}"
-cd "${maven_dir}"
+cd "${git_dir}"
 mvn clean package
 
 
