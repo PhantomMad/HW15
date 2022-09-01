@@ -8,7 +8,7 @@ resource "yandex_compute_instance" "vm_prod" {
   boot_disk {
     initialize_params {
       image_id = var.image_id
-      size = var.size_hd
+      size     = var.size_hd
     }
   }
   network_interface {
