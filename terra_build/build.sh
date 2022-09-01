@@ -12,3 +12,4 @@ mvn clean package
 cp ./target/*.*ar ${mnt_folder}
 cd ..
 rm -rf "${git_dir}"
+umount ${mnt_folder}
