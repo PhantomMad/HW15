@@ -13,3 +13,8 @@ variable "size_hd" {
   type        = number
   default     = 15
 }
+variable "tomcat_gz" {
+  description = "Tomcat arch version to deploy"
+  type        = string
+  default     = "apache-tomcat-9.0.65.tar.gz"
+}

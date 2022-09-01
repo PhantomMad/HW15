@@ -170,6 +170,7 @@ logs/
 .profile
 .ssh/
 .sudo_as_admin_successful
+.passwd-s3fs
 #Terraform
 .terraform.d/
 yandex-cloud/
@@ -184,3 +185,4 @@ apache-maven-*-bin.tar.gz
 apache-tomcat-*.tar.gz
 #Git
 .gitconfig
+terra_backet/variables.tf

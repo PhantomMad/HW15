@@ -18,3 +18,9 @@ variable "maven_gz" {
   type        = string
   default     = "apache-maven-3.8.6-bin.tar.gz"
 }
+variable "git_url" {
+  description = "Get url to build on maven engine"
+  type        = string
+  default     = "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"
+}
+#https://github.com/Coveros/helloworld.git
