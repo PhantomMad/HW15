@@ -22,7 +22,7 @@ resource "yandex_compute_instance" "vm_prod" {
     user-data = "${file("~/terra_prod/users.txt")}"
   }
   provisioner "file" {
-    source      = var.image_id
+    source      = var.tomcat_gz
     destination = "/tmp/${var.tomcat_gz}"
   }
   provisioner "file" {
