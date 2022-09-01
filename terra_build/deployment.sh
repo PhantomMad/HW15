@@ -4,7 +4,12 @@ ami=$(whoami)
 maven_arch="$1"
 maven_src="/tmp/${maven_arch}"
 maven_dir="/opt/maven"
-[ "${ami}" == "root" ] || exit 1
+3fs_passwd_tmp="/tmp/.passwd-s3fs"
+3fs_passwd_root="/root/.passwd-s3fs"
+[ "${ami}" == "root" ] || (echo "You must be root!" && exit 1)
+[ -e "${3fs_passwd_tmp}" ] || (echo "Sec password file is absent" && exit 1)
+mv "${3fs_passwd_tmp}" "${3fs_passwd_root}"
+chmod 400 "${3fs_passwd_root}"
 apt-get update
 apt-get install -y default-jdk git tar s3fs
 rm -rf /var/lib/apt/lists/*

@@ -33,6 +33,10 @@ resource "yandex_compute_instance" "vm_build" {
     source      = "build.sh"
     destination = "/tmp/build.sh"
   }
+  provisioner "file" {
+    source      = ".passwd-s3fs"
+    destination = "/tmp/.passwd-s3fs"
+  }
   provisioner "remote-exec" {
     inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/deployment.sh ${var.maven_gz}", ]
   }
