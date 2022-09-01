@@ -29,8 +29,15 @@ resource "yandex_compute_instance" "vm_build" {
     source      = "deployment.sh"
     destination = "/tmp/deployment.sh"
   }
+  provisioner "file" {
+    source      = "build.sh"
+    destination = "/tmp/build.sh"
+  }
   provisioner "remote-exec" {
-    inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/deployment.sh ${var.git_url} ${var.maven_gz}", ]
+    inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/deployment.sh ${var.maven_gz}", ]
+  }
+  provisioner "remote-exec" {
+    inline = ["chmod +x /tmp/deployment.sh", "sudo /tmp/build.sh ${var.git_url}", ]
   }
   connection {
     type        = "ssh"
