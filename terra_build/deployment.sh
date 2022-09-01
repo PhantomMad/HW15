@@ -7,7 +7,7 @@ maven_src="/tmp/${maven_arch}"
 maven_dir="/opt/maven"
 git_dir="/tmp/git"
 [ "${ami}" == "root" ] || exit 1
-apt-get update > /dev/null 2>&1
+apt-get update
 apt-get install -y default-jdk git tar
 rm -rf /var/lib/apt/lists/*
 [ -e "${maven_src}" ] || (echo "Maven srcfolder ${maven_src}  is absent!" && exit 1)
