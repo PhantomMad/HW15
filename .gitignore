@@ -171,6 +171,7 @@ logs/
 .ssh/
 .sudo_as_admin_successful
 .passwd-s3fs
+.selected_editor
 #Terraform
 .terraform.d/
 yandex-cloud/
