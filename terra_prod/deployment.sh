@@ -25,4 +25,4 @@ cp ${mnt_folder}/*.*ar ${tomcat_dir}/webapps/
 rm -rf /tmp/mount/*
 export CATALINA_PID=/opt/tomcat/temp/tomcat.pid
 export CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-exec /opt/tomcat/bin/startup.sh
+exec /opt/tomcat/bin/startup.sh run
